@@ -7,7 +7,7 @@ const router = new (0, _express.Router)();
 router.get('/', _loginRequered2.default, _UserController2.default.index);
 router.get('/:id', _UserController2.default.show);
 
-// router.post('/', userController.store);
+router.post('/', _UserController2.default.store);
 router.put('/', _loginRequered2.default, _UserController2.default.update);
 router.delete('/', _loginRequered2.default, _UserController2.default.delete);
 exports. default = router;
