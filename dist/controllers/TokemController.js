@@ -27,7 +27,7 @@ class TokenController {
       process.env.TOKEN_SECRET,
       { expiresIn: process.env.TOKEN_EXPIRATION },
     );
-    return res.json({ tokem });
+    return res.json({ tokem, user: { nome: user.nome, id, email } });
   }
 }
 exports. default = new TokenController();
