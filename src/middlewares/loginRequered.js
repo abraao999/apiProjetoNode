@@ -2,10 +2,10 @@ import jwt from 'jsonwebtoken';
 import User from '../models/User';
 
 export default async (req, res, next) => {
-  const { autorizacao } = req.headers;
-  console.log(autorizacao);
-  if (!autorizacao) { return res.status(401).json({ erros: 'login requerido' }); }
-  const [, tokem] = autorizacao.split(' ');
+  const { authorization } = req.headers;
+  console.log(req);
+  if (!authorization) { return res.status(401).json({ erros: 'login requerido' }); }
+  const [, tokem] = authorization.split(' ');
   try {
     const dados = jwt.verify(tokem, process.env.TOKEN_SECRET);
     const { id, email } = dados;
