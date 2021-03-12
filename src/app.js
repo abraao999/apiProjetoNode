@@ -37,7 +37,7 @@ class App {
     // this.app.use(cors(corsOptions));
     this.app.use(cors());
     this.app.use(helmet());
-    this.app.use(delay(2000));
+    this.app.use(delay(1000));
     this.app.use(express.static(resolve(__dirname, '..', 'uploads')));
   }
 
