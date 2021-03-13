@@ -32,7 +32,7 @@ class AlunoController {
       }
 
       const alunos = await _Aluno2.default.findByPk(id, {
-        attributes: ['id', 'nome', 'email', 'idade', 'peso', 'altura'],
+        attributes: ['id', 'nome', 'sobrenome', 'email', 'idade', 'peso', 'altura'],
         order: [['id', 'DESC'], [_Foto2.default, 'id', 'DESC']],
         include: { model: _Foto2.default, attributes: ['url', 'filename'] },
       });
