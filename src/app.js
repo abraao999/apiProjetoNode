@@ -6,7 +6,6 @@ import './database';
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
-import delay from 'express-delay';
 import homeRoutes from './routes/homeRoutes';
 import userRoutes from './routes/userRoutes';
 import tokemRoutes from './routes/tokemRoutes';
@@ -37,7 +36,6 @@ class App {
     // this.app.use(cors(corsOptions));
     this.app.use(cors());
     this.app.use(helmet());
-    this.app.use(delay(1000));
     this.app.use(express.static(resolve(__dirname, '..', 'uploads')));
   }
 
